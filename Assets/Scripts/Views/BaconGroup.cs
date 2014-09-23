@@ -58,9 +58,10 @@ public class BaconGroup : HorizontalOrVerticalLayoutGroup
             for( int i = 0; i < base.rectChildren.Count; i++ )
             {
                 rect = base.rectChildren[ i ];
+                var offset = rectTransform.sizeDelta.x / 2 - rect.sizeDelta.x / 2;
                 var minSize = LayoutUtility.GetPreferredSize( rect, axis );
                 
-                base.SetChildAlongAxis(rect, axis, 100, minSize); // width
+                base.SetChildAlongAxis(rect, axis, offset, minSize); // width
             }
         }
         else
